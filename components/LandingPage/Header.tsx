@@ -1,4 +1,4 @@
-import {  PaletteIcon } from 'lucide-react'
+import {  PaletteIcon, PartyPopperIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Link as ViewTransitionsLink } from 'next-view-transitions'
@@ -10,10 +10,26 @@ const Header = () => {
 
         {/* Header for mobile devices */}
 
+        <div className="sm:hidden w-full p-2.5 bg-white dark:bg-black/5">
+
+            <Link href={"#"} className="flex items-center justify-center gap-2">
+
+                <span className='flex items-center gap-2'>
+
+                    <PartyPopperIcon className="w-3.5 h-3.5" />
+                    <span className='text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text font-semibold'>
+                        An open-source Component Library
+                    </span>
+                </span>
+            
+            </Link>
+
+        </div>
+
 
         {/* Header for Desktop */}
 
-        <div className='sticky top-0 left-0 right-0 z-50 h-[20vh]'>
+        <div className='sticky top-0 left-0 right-0 z-50 sm:h-[20vh]'>
 
             <div className='bg-white dark:bg-black/5 w-full'>
 
@@ -43,14 +59,14 @@ const Header = () => {
 
                                 <Link href={'/'} className='flex items-center gap-2 '>
                                     <PaletteIcon className='w-6 h-6 text-green-500 dark:text-green-400' />
-                                    <span className='hidden sm:block font-semibold'>Apex UI</span>
+                                    <span className='font-semibold'>Apex UI</span>
                                 </Link>
 
                                 <span className='text-zinc-300 dark:text-zinc-700'>|</span>
 
                                 {/* Desktop Navigations */}
 
-                                <div className='hidden sm:flex items-center gap-4'>
+                                <div className='flex items-center gap-4'>
 
                                     <ViewTransitionsLink
                                     href={"/docs/components/background-paths"}
@@ -74,7 +90,7 @@ const Header = () => {
 
                             {/* Right Side Items */}
 
-                            <div className='hidden sm:flex items-center gap-3'>
+                            <div className='flex items-center gap-3'>
 
                                 <span className='text-zinc-300 dark:text-zinc-700'>
                                     |
