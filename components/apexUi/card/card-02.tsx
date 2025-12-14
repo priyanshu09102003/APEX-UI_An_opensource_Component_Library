@@ -62,7 +62,7 @@ export default function Card02({
                                 )}
                             >
                                 <Image
-                                    src={image}
+                                    src={'/random-3.jpg'}
                                     alt={name}
                                     width={64}
                                     height={64}

@@ -8,6 +8,13 @@ import { BrowseComponentsButton } from '../ui/BrowseButton';
 import { DeveloperButton } from '../ui/DeveloperButton';
 import Features from './Features';
 import Link from 'next/link';
+import Card08 from '../apexUi/card/card-08';
+import ActionSearchBar from '../apexUi/action-search-bar';
+import Card02 from '../apexUi/card/card-02';
+import AIInput_04 from '../apexUi/ai-input/ai-input-04';
+import { Btn14 } from '../apexUi/button/btn-14';
+import Btn03 from '../apexUi/button/btn-03';
+import Input09 from '../apexUi/input/input-09';
 
 
 export function HeroSection () {
@@ -15,7 +22,7 @@ export function HeroSection () {
     <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 px-4 sm:px-6 py-12 md:py-16 lg:py-20">
         {/* Left Side - Title and CTA */}
 
-        <div className='w-full lg:w-[45%] flex-col items-start text-left space-y-8'> 
+        <div className='w-full lg:w-[45%] flex-col items-start text-left space-y-8 lg:-mt-30'> 
 
             <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,23 +105,24 @@ export function HeroSection () {
                 {/* Card Component */}
 
                 <div className='w-full flex flex-col items-center justify-center'>
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                    <span className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] text-center mb-2 font-semibold">
 
-                       Premium Card
+                       Premium Cards
                     </span>
 
-                    {/* <Card/> */}
+                    <Card08 />
 
                 </div>
 
                 {/* Action Search Bar */}
 
                 <div className="w-full max-w-[600px] bg-transparent">
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                    <span className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] text-center mb-2 font-semibold">
                         Luxury Components
                     </span>
 
-                    {/* <ActionSearchBar /> */}
+                    <ActionSearchBar />
+                    <Card02 />
 
                 </div>
 
@@ -127,12 +135,12 @@ export function HeroSection () {
                 className="w-full"
             >
 
-                <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                <span className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] text-center mb-2 block font-semibold">
                     AI Chat
                 </span>
 
                 <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
-                    {/* <AIInput/> */}
+                    <AIInput_04 />
                 </div>
             </motion.div>
 
@@ -144,26 +152,26 @@ export function HeroSection () {
                 >
                 {/* Left side - Buttons */}
                 <div className="w-full">
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                    <span className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] text-center mb-2 block font-semibold">
                      Elegant Buttons
                     </span>
                     <div className="w-full h-48 rounded-xl  border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center gap-3">
                     <Link href="/docs/components/button">
-                        {/* <Btn14 label="Bring me" className=" w-42 py-5" /> */}
+                        <Btn14 label='Explore' className='w-42 py-5' />
                     </Link>
                     <Link href="/docs/components/button">
-                        {/* <Btn03 className=" w-42 py-5" /> */}
+                        <Btn03 className=" w-42 py-5" />
                     </Link>
                     </div>
                 </div>
 
                 {/* Right side - Input */}
                 <div className="w-full">
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                    <span className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] text-center mb-2 block font-semibold">
                      Smart Inputs
                     </span>
                     <Link href="/docs/components/input">
-                    {/* <Input09 /> */}
+                    <Input09 />
             </Link>
           </div>
         </motion.div>

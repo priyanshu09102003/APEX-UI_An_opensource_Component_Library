@@ -1,6 +1,9 @@
-import TopNav from "@/components/apexUi/blocks/dashboard/top-nav";
-import ParticlesBackground from "@/components/apexUi/particles-background";
+import AIInput_04 from "@/components/apexUi/ai-input/ai-input-04";
+import { ComponentShowcaseCard } from "@/components/LandingPage/ComponentsShowcaseCard";
 import {HeroSection} from "@/components/LandingPage/HeroSection";
+import { InteractivePreview } from "@/components/LandingPage/InteractivePreview";
+import { BuildInterfacesCard } from "@/components/LandingPage/InterfacesCard";
+import { TechnologyBadges } from "@/components/LandingPage/TechnologyBadges";
 
 
 export default function Home() {
@@ -12,9 +15,18 @@ export default function Home() {
 
       </div>
 
+      <ComponentShowcaseCard className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 md:py-16 lg:py-20" />
+
+      <InteractivePreview />
+
+      <BuildInterfacesCard className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 md:py-16 lg:py-20" />
+
+      <TechnologyBadges />
+
+
+
       <div className="flex flex-col justify-center gap-10">
-        
-       
+
       </div>
       
     </main>
