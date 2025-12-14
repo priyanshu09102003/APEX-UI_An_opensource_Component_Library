@@ -1,12 +1,7 @@
-import Alert01 from "@/components/apexUi/alert/alert-01";
-import Alert02 from "@/components/apexUi/alert/alert-02";
-import Alert03 from "@/components/apexUi/alert/alert-03";
-import Alert04 from "@/components/apexUi/alert/alert-04";
-import Alert05 from "@/components/apexUi/alert/alert-05";
-import Alert06 from "@/components/apexUi/alert/alert-06";
-import Alert07 from "@/components/apexUi/alert/alert-07";
+import TopNav from "@/components/apexUi/blocks/dashboard/top-nav";
+import ParticlesBackground from "@/components/apexUi/particles-background";
 import {HeroSection} from "@/components/LandingPage/HeroSection";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -18,14 +13,8 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col justify-center gap-10">
-      <Alert01/>
-      <Alert02/>
-      <Alert03/>
-      <Alert04/>
-      <Alert05/>
-      <Alert06/>
-      <Alert07/>
-
+        
+       
       </div>
       
     </main>
