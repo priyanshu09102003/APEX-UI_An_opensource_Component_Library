@@ -62,7 +62,7 @@ const Header = () => {
                                     <span className='font-semibold'>Apex UI</span>
                                 </Link>
 
-                                <span className='text-zinc-300 dark:text-zinc-700'>|</span>
+                                <span className='text-zinc-400 dark:text-zinc-500'>|</span>
 
                                 {/* Desktop Navigations */}
 
@@ -92,7 +92,7 @@ const Header = () => {
 
                             <div className='flex items-center gap-3'>
 
-                                <span className='text-zinc-300 dark:text-zinc-700'>
+                                <span className='text-zinc-400 dark:text-zinc-500'>
                                     |
                                 </span>
 
