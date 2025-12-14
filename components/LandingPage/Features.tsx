@@ -27,9 +27,8 @@ const Features = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{
-                          duration: 0.3,
-                          delay: 0.1,
-                          ease: [0.23, 1, 0.32, 1],
+                          duration: 0.4,
+                          ease: [0.16, 1, 0.3, 1],
                       }}
                       animate={{
                           scale: hoveredItem === "TailwindCSS" ? 1.05 : 1,
@@ -41,8 +40,7 @@ const Features = () => {
                           "rounded-xl px-5 py-4",
                           "shadow-lg dark:shadow-xl",
                           "hover:shadow-xl dark:hover:shadow-2xl",
-                          "transition-all duration-300",
-                          "w-full md:w-auto"
+                          "transition-all duration-200 ease-out"
                       )}
                       onMouseEnter={() => handleMouseEnter("TailwindCSS")}
                       onMouseLeave={handleMouseLeave}
@@ -70,8 +68,8 @@ const Features = () => {
                                   hoveredItem === "TailwindCSS" ? 500 : 400,
                           }}
                           transition={{
-                              duration: 0.3,
-                              ease: [0.34, 1.56, 0.64, 1],
+                              duration: 0.2,
+                              ease: [0.16, 1, 0.3, 1],
                           }}
                           className="text-xs text-center whitespace-nowrap text-black dark:text-white"
                       >
@@ -85,9 +83,8 @@ const Features = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.3,
-                        delay: 0.5,
-                        ease: [0.23, 1, 0.32, 1],
+                        duration: 0.4,
+                        ease: [0.16, 1, 0.3, 1],
                     }}
                     animate={{
                         scale: hoveredItem === "Shadcn UI" ? 1.05 : 1,
@@ -99,7 +96,7 @@ const Features = () => {
                         "rounded-xl px-5 py-4",
                         "shadow-lg dark:shadow-xl",
                         "hover:shadow-xl dark:hover:shadow-2xl",
-                        "transition-all duration-300",
+                        "transition-all duration-200 ease-out",
                         "w-full md:w-auto"
                     )}
                     onMouseEnter={() => handleMouseEnter("Shadcn UI")}
@@ -115,8 +112,8 @@ const Features = () => {
                             fontWeight: hoveredItem === "Shadcn UI" ? 500 : 400,
                         }}
                         transition={{
-                            duration: 0.3,
-                            ease: [0.34, 1.56, 0.64, 1],
+                            duration: 0.2,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                         className="text-xs text-center whitespace-nowrap"
                     >
@@ -129,9 +126,8 @@ const Features = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.3,
-                        delay: 0.6,
-                        ease: [0.23, 1, 0.32, 1],
+                        duration: 0.4,
+                        ease: [0.16, 1, 0.3, 1],
                     }}
                     animate={{
                         scale: hoveredItem === "Next.js" ? 1.05 : 1,
@@ -143,7 +139,7 @@ const Features = () => {
                         "rounded-xl px-5 py-4",
                         "shadow-lg dark:shadow-xl",
                         "hover:shadow-xl dark:hover:shadow-2xl",
-                        "transition-all duration-300",
+                        "transition-all duration-200 ease-out",
                         "w-full md:w-auto"
                     )}
                     onMouseEnter={() => handleMouseEnter("Next.js")}
@@ -156,8 +152,8 @@ const Features = () => {
                             fontWeight: hoveredItem === "Next.js" ? 500 : 400,
                         }}
                         transition={{
-                            duration: 0.3,
-                            ease: [0.34, 1.56, 0.64, 1],
+                            duration: 0.2,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                         className="text-xs text-center whitespace-nowrap"
                     >
@@ -169,9 +165,8 @@ const Features = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.3,
-                        delay: 0.7,
-                        ease: [0.23, 1, 0.32, 1],
+                        duration: 0.4,
+                        ease: [0.16, 1, 0.3, 1],
                     }}
                     animate={{
                         scale: hoveredItem === "React" ? 1.05 : 1,
@@ -183,7 +178,7 @@ const Features = () => {
                         "rounded-xl px-5 py-4",
                         "shadow-lg dark:shadow-xl",
                         "hover:shadow-xl dark:hover:shadow-2xl",
-                        "transition-all duration-300",
+                        "transition-all duration-200 ease-out",
                         "w-full md:w-auto"
                     )}
                     onMouseEnter={() => handleMouseEnter("React")}
@@ -196,8 +191,8 @@ const Features = () => {
                             fontWeight: hoveredItem === "React" ? 500 : 400,
                         }}
                         transition={{
-                            duration: 0.3,
-                            ease: [0.34, 1.56, 0.64, 1],
+                            duration: 0.2,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                         className="text-xs text-center whitespace-nowrap"
                     >

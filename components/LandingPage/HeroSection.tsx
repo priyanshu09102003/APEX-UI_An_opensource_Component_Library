@@ -7,6 +7,7 @@ import TailwindCss from '../icons/TailwindCss';
 import { BrowseComponentsButton } from '../ui/BrowseButton';
 import { DeveloperButton } from '../ui/DeveloperButton';
 import Features from './Features';
+import Link from 'next/link';
 
 
 export function HeroSection () {
@@ -43,7 +44,7 @@ export function HeroSection () {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-fuchsia-500 dark:from-rose-400 dark:to-fuchsia-400">
                         Tailwind CSS
                     </span>{" "}and{" "}
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-purple-500 dark:from-fuchsia-400 dark:to-purple-400">shadcn/ui </span>{" "} for modern Applications.
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-purple-500 dark:from-fuchsia-400 dark:to-purple-400">shadcn/ui </span>{" "} for modern applications.
                 </p>
 
             </motion.div>
@@ -78,6 +79,94 @@ export function HeroSection () {
             </motion.div>
 
             <Features/>
+
+        </div>
+
+
+        {/* Right Side - Components showdown */}
+
+        <div className='w-full lg:w-[55%] flex-col flex justify-between gap-6 lg:pl-8'>
+
+            {/* Top row */}
+
+            <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
+            >
+                {/* Card Component */}
+
+                <div className='w-full flex flex-col items-center justify-center'>
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+
+                       Premium Card
+                    </span>
+
+                    {/* <Card/> */}
+
+                </div>
+
+                {/* Action Search Bar */}
+
+                <div className="w-full max-w-[600px] bg-transparent">
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                        Luxury Components
+                    </span>
+
+                    {/* <ActionSearchBar /> */}
+
+                </div>
+
+            </motion.div>
+
+             <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="w-full"
+            >
+
+                <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                    AI Chat
+                </span>
+
+                <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center">
+                    {/* <AIInput/> */}
+                </div>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
+                >
+                {/* Left side - Buttons */}
+                <div className="w-full">
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                     Elegant Buttons
+                    </span>
+                    <div className="w-full h-48 rounded-xl  border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center gap-3">
+                    <Link href="/docs/components/button">
+                        {/* <Btn14 label="Bring me" className=" w-42 py-5" /> */}
+                    </Link>
+                    <Link href="/docs/components/button">
+                        {/* <Btn03 className=" w-42 py-5" /> */}
+                    </Link>
+                    </div>
+                </div>
+
+                {/* Right side - Input */}
+                <div className="w-full">
+                    <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+                     Smart Inputs
+                    </span>
+                    <Link href="/docs/components/input">
+                    {/* <Input09 /> */}
+            </Link>
+          </div>
+        </motion.div>
 
         </div>
       
