@@ -77,10 +77,10 @@ const Header = () => {
                                     </ViewTransitionsLink>
 
                                     <ViewTransitionsLink
-                                    href={"/pricing"}
+                                    href={"/docs/blocks/ai-card-generation"}
                                     className='text-sm text-zinc-600 hover:text-zinc-900 dark:textext-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors'
                                     >
-                                        Pricing
+                                        Blocks
 
                                     </ViewTransitionsLink>
 

@@ -26,6 +26,7 @@ export default function Home() {
 
       <div className="flex flex-col justify-center gap-10">
 
+      
       </div>
       
     </main>

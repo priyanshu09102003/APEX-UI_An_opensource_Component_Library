@@ -110,7 +110,7 @@ export function HeroSection () {
                        Premium Cards
                     </span>
 
-                    <Card08 />
+                    <Card08 href="/docs/components/card" />
 
                 </div>
 
