@@ -6,7 +6,8 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/layouts/docs/page';
 import { notFound } from 'next/navigation';
-import { getMDXComponents } from '@/mdx-components';
+import {Preview} from "@/components/mdx/preview"
+import {PreviewClient} from "@/components/mdx/preview-client"
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 
@@ -37,7 +38,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
 }
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return [];
 }
 
 export async function generateMetadata(
