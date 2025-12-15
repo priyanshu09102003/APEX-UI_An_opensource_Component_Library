@@ -1,9 +1,8 @@
-import AIInput_04 from "@/components/apexUi/ai-input/ai-input-04";
-import { ComponentShowcaseCard } from "@/components/LandingPage/ComponentsShowcaseCard";
-import {HeroSection} from "@/components/LandingPage/HeroSection";
-import { InteractivePreview } from "@/components/LandingPage/InteractivePreview";
-import { BuildInterfacesCard } from "@/components/LandingPage/InterfacesCard";
-import { TechnologyBadges } from "@/components/LandingPage/TechnologyBadges";
+import { ComponentShowcaseCard } from "../../components/LandingPage/ComponentsShowcaseCard";
+import { HeroSection } from "../../components/LandingPage/HeroSection";
+import { InteractivePreview } from "../../components/LandingPage/InteractivePreview";
+import { BuildInterfacesCard } from "../../components/LandingPage/InterfacesCard";
+import { TechnologyBadges } from "../../components/LandingPage/TechnologyBadges";
 
 
 export default function Home() {
