@@ -57,7 +57,7 @@ const PreviewContent = ({
 
         const handleTerminalClick = () => {
         const [folder, filename] = link.split("/");
-        const COPY = `npmx shadcn@latest add ${prePath}/r/${
+        const COPY = `npx shadcn@latest add ${prePath}/r/${
             filename ? filename : folder
         }.json`;
         navigator.clipboard.writeText(COPY);
@@ -207,7 +207,7 @@ const PreviewContent = ({
                                     )}
                                 />
                             )}
-                            <span>npmx shadcn add {getFileName()}</span>
+                            <span>npx shadcn add {getFileName()}</span>
                         </Button>
 
                         {!isBlock && (
