@@ -50,12 +50,12 @@ const PreviewContent = ({
         })
     }
 
-       const getFileName = () => {
+    const getFileName = () => {
         const [folder, filename] = link.split("/");
         return filename ? filename : folder;
     };
 
-        const handleTerminalClick = () => {
+    const handleTerminalClick = () => {
         const [folder, filename] = link.split("/");
         const COPY = `npx shadcn@latest add ${prePath}/r/${
             filename ? filename : folder
@@ -73,7 +73,7 @@ const PreviewContent = ({
         return filename ? filename : folder;
     };
 
-       useEffect(() => {
+    useEffect(() => {
         if (state.error) {
             setShowLoginDialog(true);
         }
@@ -87,7 +87,7 @@ const PreviewContent = ({
         }
     }, [state]);
 
-        function SuccessParticles({
+    function SuccessParticles({
         buttonRef,
     }: {
         buttonRef: React.RefObject<HTMLButtonElement>;
@@ -132,10 +132,8 @@ const PreviewContent = ({
     const terminalButtonRef = useRef<HTMLButtonElement>(null);
     const copyButtonRef = useRef<HTMLButtonElement>(null);
 
-
-
-  return (
-         <>
+    return (
+        <>
             {isTerminalCopied && (
                 <SuccessParticles
                     buttonRef={terminalButtonRef as RefObject<HTMLButtonElement>}
@@ -148,11 +146,14 @@ const PreviewContent = ({
             )}
 
             <div
-                className={cn("relative mt-4", "rounded-xl p-3")}
+                className={cn(
+                    "relative mt-4 rounded-xl p-3",
+                    "overflow-x-auto"
+                )}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-max sm:min-w-0">
                     <a
                         href={`${prePath}/preview/${link}`}
                         target="_blank"
@@ -162,7 +163,8 @@ const PreviewContent = ({
                             "text-sm font-medium",
                             "text-zinc-800 dark:text-zinc-200",
                             "hover:text-zinc-600 dark:hover:text-zinc-400",
-                            "transition-all duration-200 no-underline group"
+                            "transition-all duration-200 no-underline group",
+                            "whitespace-nowrap"
                         )}
                     >
                         Live Preview
@@ -191,7 +193,8 @@ const PreviewContent = ({
                                 "transition-all duration-200",
                                 "group flex items-center gap-1",
                                 "rounded-lg",
-                                "shadow-none"
+                                "shadow-none",
+                                "whitespace-nowrap"
                             )}
                         >
                             {isTerminalCopied ? (
@@ -233,7 +236,8 @@ const PreviewContent = ({
                                         "transition-all duration-200",
                                         "group flex items-center gap-1",
                                         "rounded-lg",
-                                        "shadow-none"
+                                        "shadow-none",
+                                        "whitespace-nowrap"
                                     )}
                                 >
                                     {isCopied ? (
@@ -257,7 +261,7 @@ const PreviewContent = ({
                 </div>
             </div>
         </>
-  )
+    )
 }
 
 export default PreviewContent
