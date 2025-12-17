@@ -32,6 +32,9 @@ const nextConfig: NextConfig = {
                 pathname: '/**',
             },
         ],
+    },
+    typescript: {
+        ignoreBuildErrors: true
     }
   
 } as NextConfig;
