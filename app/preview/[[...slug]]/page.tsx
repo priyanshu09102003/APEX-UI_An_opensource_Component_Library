@@ -1,6 +1,14 @@
 
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Live Preview Viewer | Apex UI"
+  description: "Live Preview of our Premium Components",
+};
+
 
 
 // Arrays to categorize components
