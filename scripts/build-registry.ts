@@ -7,6 +7,10 @@ import path from "path";
 const REGISTRY_BASE_PATH = process.cwd();
 const PUBLIC_FOLDER_BASE_PATH = "public/r";
 
+/**
+ * bun run ./scripts/build-registry.ts
+ *
+ */
 type File = z.infer<typeof registryItemFileSchema>;
 
 async function writeFileRecursive(filePath: string, data: string) {
@@ -21,50 +25,44 @@ async function writeFileRecursive(filePath: string, data: string) {
     }
 }
 
-// Helper to remove extension
-const removeExtension = (filename: string): string => {
-    return filename.replace(/\.(tsx?|jsx?)$/, '');
-};
-
 const getComponentFiles = async (files: File[], registryType: string) => {
     const filesArrayPromises = (files ?? []).map(async (file) => {
         if (typeof file === "string") {
-            const normalizedPath = file.startsWith("/") ? file : `/${file}`;
+            // Remove leading slash if present
+            const normalizedPath = file.startsWith("/") ? file.slice(1) : file;
             const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
             const fileContent = await fs.readFile(filePath, "utf-8");
             
             const fileName = normalizedPath.split('/').pop() || '';
-            const fileNameWithoutExt = removeExtension(fileName);
-            const pathWithoutExt = removeExtension(normalizedPath);
             
             return {
                 type: registryType,
-                content: fileContent,  
-                path: pathWithoutExt,  
-                target: `components/apexUi/${fileNameWithoutExt}`,  
+                content: fileContent,
+                path: normalizedPath,
+                target: `components/apexui/${fileName}`,
             };
         }
         
+        // Remove leading slash from path
         const normalizedPath = file.path.startsWith("/")
-            ? file.path
-            : `/${file.path}`;
+            ? file.path.slice(1)
+            : file.path;
+            
         const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
         const fileContent = await fs.readFile(filePath, "utf-8");
         
         const fileName = normalizedPath.split('/').pop() || '';
-        const fileNameWithoutExt = removeExtension(fileName);
-        const pathWithoutExt = removeExtension(normalizedPath);
         
         const getTargetPath = (type: string) => {
             switch (type) {
                 case "registry:hook":
-                    return `hooks/${fileNameWithoutExt}`;
+                    return `hooks/${fileName}`;
                 case "registry:lib":
-                    return `lib/${fileNameWithoutExt}`;
+                    return `lib/${fileName}`;
                 case "registry:block":
-                    return `blocks/${fileNameWithoutExt}`;
+                    return `blocks/${fileName}`;
                 default:
-                    return `components/apexUi/${fileNameWithoutExt}`;
+                    return `components/apexui/${fileName}`;
             }
         };
         
@@ -72,8 +70,8 @@ const getComponentFiles = async (files: File[], registryType: string) => {
         
         return {
             type: fileType,
-            content: fileContent,  
-            path: pathWithoutExt, 
+            content: fileContent,
+            path: normalizedPath,
             target: typeof file === 'string' ? getTargetPath(registryType) : (file.target || getTargetPath(fileType)),
         };
     });
@@ -89,7 +87,6 @@ const main = async () => {
         if (!files) throw new Error("No files found for component");
         
         const filesArray = await getComponentFiles(files, component.type);
-        
         const json = JSON.stringify(
             {
                 ...component,
@@ -98,6 +95,7 @@ const main = async () => {
             null,
             2
         );
+        
         const jsonPath = `${PUBLIC_FOLDER_BASE_PATH}/${component.name}.json`;
         await writeFileRecursive(jsonPath, json);
         console.log(json);
