@@ -11,7 +11,6 @@ type File = z.infer<typeof registryItemFileSchema>;
 
 async function writeFileRecursive(filePath: string, data: string) {
     const dir = path.dirname(filePath);
-
     try {
         await fs.mkdir(dir, { recursive: true });
         await fs.writeFile(filePath, data, "utf-8");
@@ -22,9 +21,9 @@ async function writeFileRecursive(filePath: string, data: string) {
     }
 }
 
-// Helper function to remove file extension
+// Helper to remove extension
 const removeExtension = (filename: string): string => {
-    return filename.replace(/\.(tsx?|jsx?|css|json)$/, '');
+    return filename.replace(/\.(tsx?|jsx?)$/, '');
 };
 
 const getComponentFiles = async (files: File[], registryType: string) => {
@@ -34,18 +33,15 @@ const getComponentFiles = async (files: File[], registryType: string) => {
             const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
             const fileContent = await fs.readFile(filePath, "utf-8");
             
-            // Remove extension from filename
             const fileName = normalizedPath.split('/').pop() || '';
             const fileNameWithoutExt = removeExtension(fileName);
-            
-            // Remove extension from path
             const pathWithoutExt = removeExtension(normalizedPath);
             
             return {
                 type: registryType,
-                content: fileContent,
-                path: pathWithoutExt,
-                target: `components/apexUi/${fileNameWithoutExt}`,
+                content: fileContent,  
+                path: pathWithoutExt,  
+                target: `components/apexUi/${fileNameWithoutExt}`,  
             };
         }
         
@@ -55,11 +51,8 @@ const getComponentFiles = async (files: File[], registryType: string) => {
         const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
         const fileContent = await fs.readFile(filePath, "utf-8");
         
-        // Remove extension from filename
         const fileName = normalizedPath.split('/').pop() || '';
         const fileNameWithoutExt = removeExtension(fileName);
-        
-        // Remove extension from path
         const pathWithoutExt = removeExtension(normalizedPath);
         
         const getTargetPath = (type: string) => {
@@ -79,12 +72,12 @@ const getComponentFiles = async (files: File[], registryType: string) => {
         
         return {
             type: fileType,
-            content: fileContent,
-            path: pathWithoutExt,
+            content: fileContent,  
+            path: pathWithoutExt, 
             target: typeof file === 'string' ? getTargetPath(registryType) : (file.target || getTargetPath(fileType)),
         };
     });
-
+    
     const filesArray = await Promise.all(filesArrayPromises);
     return filesArray;
 };
@@ -94,9 +87,9 @@ const main = async () => {
         const component = registry[i];
         const files = component.files;
         if (!files) throw new Error("No files found for component");
-
+        
         const filesArray = await getComponentFiles(files, component.type);
-
+        
         const json = JSON.stringify(
             {
                 ...component,
