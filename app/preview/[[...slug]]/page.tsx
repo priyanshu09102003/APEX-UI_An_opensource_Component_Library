@@ -1,15 +1,6 @@
-
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-
-
-export const metadata: Metadata = {
-  title: "Live Preview Viewer | Apex UI"
-  description: "Live Preview of our Premium Components",
-};
-
-
 
 // Arrays to categorize components
 const CENTERED_COMPONENTS = [
@@ -35,10 +26,23 @@ const CENTERED_COMPONENTS = [
     "blocks/dashboard",
     "blocks/minimal-shop",
     "vercel-v0-chat",
-
 ];
 
 // const FULL_WIDTH_COMPONENTS = ["hero"];
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string[] }>;
+}): Promise<Metadata> {
+    const { slug } = await params;
+    const componentName = slug.join("/");
+    
+    return {
+        title: `${componentName} - Live Preview | Apex UI`,
+        description: `Live preview of ${componentName} component from Apex UI component library`,
+    };
+}
 
 export default async function PreviewPage({
     params,
@@ -47,9 +51,7 @@ export default async function PreviewPage({
 }) {
     const { slug } = await params;
     if (!slug.length) return notFound();
-
     const componentName = slug.join("/");
-
     try {
         const Component = dynamic(
             () =>
@@ -58,12 +60,10 @@ export default async function PreviewPage({
                 ),
             { ssr: true }
         );
-
         // Check if component should be centered
         const shouldCenter = CENTERED_COMPONENTS.some((component) =>
             componentName.startsWith(component)
         );
-
         return shouldCenter ? (
             <div className="min-h-screen flex items-center justify-center">
                 <Component />
