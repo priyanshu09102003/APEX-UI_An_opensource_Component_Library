@@ -16,7 +16,7 @@ interface PreviewProps {
 
 const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "https://ui.apexui.com";
+  : "https://apexui-kappa.vercel.app/";
 
 
 const Preview = ({
