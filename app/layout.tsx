@@ -33,9 +33,7 @@ export default function RootLayout({
           <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
-          <RootProvider search={{
-              enabled: true
-            }}>
+          <RootProvider>
             <ThemeProvider
             attribute="class"
             defaultTheme="dark"
