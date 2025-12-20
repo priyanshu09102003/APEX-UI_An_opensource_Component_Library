@@ -45,7 +45,7 @@ export function HeroSection () {
 
                 <p className="mt-6 text-base md:text-xl text-zinc-700 dark:text-zinc-300 max-w-lg">
 
-                    An curated collection of {" "}
+                    A curated collection of {" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 dark:from-amber-400 dark:via-orange-300 dark:to-amber-400 animate-[glow_3s_ease-in-out_infinite] font-semibold">Premium UI components</span>
                     {" "}crafted with{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-fuchsia-500 dark:from-rose-400 dark:to-fuchsia-400">
