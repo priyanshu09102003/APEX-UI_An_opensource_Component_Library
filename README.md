@@ -1,6 +1,6 @@
 # Apex UI - *An Open Source Components Library for Modern Applications*
 
-![Apex UI Banner](./path-to-your-screenshot.png)
+![Apex UI Banner](./public/banner-apexui.png)
 
 ## Installation
 
