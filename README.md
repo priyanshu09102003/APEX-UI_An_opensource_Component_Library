@@ -171,18 +171,18 @@ pnpm dlx shadcn@latest add https://apexui-kappa.vercel.app/r/card-05.json -c ./a
 <table>
 <tr>
 <td width="50%">
-<img src="./public/block-example-1.png" alt="Block Example 1" width="250" />
+<img src="./public/pb-1.png" alt="Block Example 1" width="530" />
 </td>
 <td width="50%">
-<img src="./public/block-example-2.png" alt="Block Example 2" width="250" />
+<img src="./public/pb-2.png" alt="Block Example 2" width="530" />
 </td>
 </tr>
 <tr>
 <td width="50%">
-<img src="./public/block-example-3.png" alt="Block Example 3" width="250" />
+<img src="./public/pb-3.png" alt="Block Example 3" width="530" />
 </td>
 <td width="50%">
-<img src="./public/block-example-4.png" alt="Block Example 4" width="250" />
+<img src="./public/pb-4.png" alt="Block Example 4" width="530" />
 </td>
 </tr>
 </table>
