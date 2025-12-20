@@ -1,6 +1,6 @@
 # Apex UI - *An Open Source Components Library for Modern Applications*
 
-![Apex UI Banner](./public/banner-apexui.png)
+![Apex UI Banner](./path-to-your-screenshot.png)
 
 ## Installation
 
@@ -133,6 +133,63 @@ npx shadcn@latest add https://apexui-kappa.vercel.app/r/card-05.json -c ./apps/w
 ```bash
 pnpm dlx shadcn@latest add https://apexui-kappa.vercel.app/r/card-05.json -c ./apps/www
 ```
+
+---
+
+## Preview
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Component Examples
+
+<table>
+<tr>
+<td width="50%">
+<img src="./public/card-example-1.png" alt="Card Example 1" />
+</td>
+<td width="50%">
+<img src="./public/card-example-2.png" alt="Card Example 2" />
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="./public/card-example-3.png" alt="Card Example 3" />
+</td>
+<td width="50%">
+<img src="./public/card-example-4.png" alt="Card Example 4" />
+</td>
+</tr>
+</table>
+
+</td>
+<td width="50%" valign="top">
+
+### Block Examples
+
+<table>
+<tr>
+<td width="50%">
+<img src="./public/block-example-1.png" alt="Block Example 1" />
+</td>
+<td width="50%">
+<img src="./public/block-example-2.png" alt="Block Example 2" />
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="./public/block-example-3.png" alt="Block Example 3" />
+</td>
+<td width="50%">
+<img src="./public/block-example-4.png" alt="Block Example 4" />
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ---
 
